@@ -87,20 +87,23 @@ namespace Ecommerce1.Data
             // Orders
             builder.Entity<Order>().HasData(
                 new Order { Id_Order = 1, Id_product = 1, Created = "2023-10-17", Modified = "2023-10-17" },
-                new Order { Id_Order = 2, Id_product = 2, Created = "2023-10-18", Modified = "2023-10-18" }
+                new Order { Id_Order = 2, Id_product = 2, Created = "2023-10-18", Modified = "2023-10-18" },
+                new Order { Id_Order = 3, Id_product = 5, Created = "2023-10-18", Modified = "2023-10-18" }
             );
 
             // Order Details
             builder.Entity<Order_Details>().HasData(
-                new Order_Details { Id_details = 1, Id_Order = 1, Id_AppUser = 1, Created = "2023-10-19", Modified = "2023-10-19" },
-                new Order_Details { Id_details = 2, Id_Order = 1, Id_AppUser = 2, Created = "2023-10-19", Modified = "2023-10-19" }
+                new Order_Details { Id_details = 1, Id_Order = 1, Id_AppUser = 52, Created = "2023-10-19", Modified = "2023-10-19" },
+                new Order_Details { Id_details = 2, Id_Order = 2, Id_AppUser = 51, Created = "2023-10-19", Modified = "2023-10-19" },
+                new Order_Details { Id_details = 3, Id_Order = 3, Id_AppUser = 553, Created = "2023-10-19", Modified = "2023-10-19" }
             );
 
             // Payments
             builder.Entity<Payment>().HasData(
                 new Payment { Id_payments = 1, Id_Order = 1, Amount = 5.00m, Provider = "Paypal", Status = "Completed", Created = "2023-10-20", Modified = "2023-10-20" },
                 new Payment { Id_payments = 2, Id_Order = 2, Amount = 8.50m, Provider = "Credit Card", Status = "Pending", Created = "2023-10-21", Modified = "2023-10-21" },
-                new Payment { Id_payments = 3, Id_Order = 2, Amount = 8.50m, Provider = "Bank Transfer", Status = "Completed", Created = "2023-10-23", Modified = "2023-10-24" }
+                new Payment { Id_payments = 3, Id_Order = 3, Amount = 8.50m, Provider = "Credit Card", Status = "Pending", Created = "2023-10-21", Modified = "2023-10-21" }
+               
             );
         }
     }
