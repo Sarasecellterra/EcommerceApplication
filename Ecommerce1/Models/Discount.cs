@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Ecommerce1.Models
+namespace Ecommerce1.Data
 {
     public class Discount
     {

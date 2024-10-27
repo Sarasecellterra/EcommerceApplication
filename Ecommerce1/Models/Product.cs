@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Ecommerce1.Models
+namespace Ecommerce1.Data
 {
     public class Product
     {

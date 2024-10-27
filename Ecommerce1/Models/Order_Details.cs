@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Ecommerce1.Models;
 
-namespace Ecommerce1.Models
+namespace Ecommerce1.Data
 {
     public class Order_Details
     {
@@ -9,7 +10,7 @@ namespace Ecommerce1.Models
         public int Id_details { get; set; }
 
 
-        public int Id_User { get; set; }
+        public int Id_AppUser { get; set; }
 
         public int Id_Order { get; set; }
 
@@ -25,9 +26,10 @@ namespace Ecommerce1.Models
         [ForeignKey("Id_Order")]
         public Order Orders { get; set; }
 
-        
-        [ForeignKey("Id_User")]
-        public User Users { get; set; }
+
+
+        [ForeignKey("Id_AppUser")]
+        public AppUsers AppUsers { get; set; }
 
         
     }

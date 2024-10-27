@@ -22,189 +22,7 @@ namespace Ecommerce1.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AppUser", b =>
-                {
-                    b.Property<int>("Id_AppUser")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_AppUser"));
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Created")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Id_User")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Modified")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("UserId_User")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id_AppUser");
-
-                    b.HasIndex("Id_User");
-
-                    b.HasIndex("UserId_User");
-
-                    b.ToTable("AppUser");
-
-                    b.HasData(
-                        new
-                        {
-                            Id_AppUser = 1,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "3a90607a-7f3e-4a50-b061-31da47d90006",
-                            Created = "2023-10-01",
-                            Email = "john.doe@gmail.com",
-                            EmailConfirmed = false,
-                            FirstName = "John",
-                            Id = "3d2243f4-a284-4ab1-a06d-4b34ea7574c5",
-                            Id_User = 1,
-                            LastName = "Doe",
-                            LockoutEnabled = false,
-                            Modified = "2023-10-10",
-                            PasswordHash = "Password1",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "de3c7a2a-2dd8-4392-aa63-2d8f074c0b3e",
-                            TwoFactorEnabled = false
-                        },
-                        new
-                        {
-                            Id_AppUser = 2,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "dcde7d25-50a0-475a-89dd-833d83f68ec9",
-                            Created = "2023-10-02",
-                            Email = "jane.smith@protonmail.com",
-                            EmailConfirmed = false,
-                            FirstName = "Jane",
-                            Id = "b377b681-b552-4b9f-b514-ab8e82246dad",
-                            Id_User = 2,
-                            LastName = "Smith",
-                            LockoutEnabled = false,
-                            Modified = "2023-10-11",
-                            PasswordHash = "Password2",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "2c09788d-bccb-41eb-a657-06d80efea925",
-                            TwoFactorEnabled = false
-                        },
-                        new
-                        {
-                            Id_AppUser = 3,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c48a533-a857-4a26-bc3c-1b09d1da064e",
-                            Created = "2023-10-03",
-                            Email = "mark.williams@domain.com",
-                            EmailConfirmed = false,
-                            FirstName = "Mark",
-                            Id = "0073dbf3-1040-469d-b2fe-3f34ec31ba77",
-                            Id_User = 3,
-                            LastName = "Williams",
-                            LockoutEnabled = false,
-                            Modified = "2023-10-12",
-                            PasswordHash = "Password3",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "2f95d211-9eac-49d6-a38e-ff9e412ade7b",
-                            TwoFactorEnabled = false
-                        },
-                        new
-                        {
-                            Id_AppUser = 4,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "b14ee5cb-b318-46da-b9a4-b8957460d698",
-                            Created = "2023-10-04",
-                            Email = "emma.jones@outlook.com",
-                            EmailConfirmed = false,
-                            FirstName = "Emma",
-                            Id = "8fd75f7d-3eec-41ce-aa88-e72252f1e80e",
-                            Id_User = 4,
-                            LastName = "Jones",
-                            LockoutEnabled = false,
-                            Modified = "2023-10-11",
-                            PasswordHash = "Password4",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6c3a8956-8b02-47e9-882f-f007eea171de",
-                            TwoFactorEnabled = false
-                        },
-                        new
-                        {
-                            Id_AppUser = 5,
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "3b6e4628-24cd-424a-96bd-ceddfe575b49",
-                            Created = "2023-10-05",
-                            Email = "robert.brown@yahoo.com",
-                            EmailConfirmed = false,
-                            FirstName = "Robert",
-                            Id = "f3d32b57-db2b-41b6-bd48-6c6c40256afe",
-                            Id_User = 5,
-                            LastName = "Brown",
-                            LockoutEnabled = false,
-                            Modified = "2023-10-12",
-                            PasswordHash = "Password5",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "259ba0c3-832c-4c13-902d-18b1d99dc686",
-                            TwoFactorEnabled = false
-                        });
-                });
-
-            modelBuilder.Entity("Ecommerce1.Models.Cart_item", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Cart_item", b =>
                 {
                     b.Property<int>("Id_cart")
                         .ValueGeneratedOnAdd()
@@ -241,33 +59,33 @@ namespace Ecommerce1.Data.Migrations
                         new
                         {
                             Id_cart = 1,
-                            Created = "2023-10-12",
+                            Created = "2023-10-15",
                             Id_Shop_Session = 1,
                             Id_product = 1,
-                            Modified = "2023-10-12",
+                            Modified = "2023-10-15",
                             Quantity = 2
                         },
                         new
                         {
                             Id_cart = 2,
-                            Created = "2023-10-13",
-                            Id_Shop_Session = 2,
+                            Created = "2023-10-15",
+                            Id_Shop_Session = 1,
                             Id_product = 2,
-                            Modified = "2023-10-13",
-                            Quantity = 3
+                            Modified = "2023-10-15",
+                            Quantity = 1
                         },
                         new
                         {
                             Id_cart = 3,
-                            Created = "2023-10-14",
-                            Id_Shop_Session = 3,
-                            Id_product = 3,
-                            Modified = "2023-10-14",
+                            Created = "2023-10-16",
+                            Id_Shop_Session = 2,
+                            Id_product = 5,
+                            Modified = "2023-10-16",
                             Quantity = 1
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Discount", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Discount", b =>
                 {
                     b.Property<int>("Id_discount")
                         .ValueGeneratedOnAdd()
@@ -337,7 +155,7 @@ namespace Ecommerce1.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Order", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Order", b =>
                 {
                     b.Property<int>("Id_Order")
                         .ValueGeneratedOnAdd()
@@ -366,27 +184,20 @@ namespace Ecommerce1.Data.Migrations
                         new
                         {
                             Id_Order = 1,
-                            Created = "2023-10-12",
+                            Created = "2023-10-17",
                             Id_product = 1,
-                            Modified = "2023-10-12"
+                            Modified = "2023-10-17"
                         },
                         new
                         {
                             Id_Order = 2,
-                            Created = "2023-10-13",
+                            Created = "2023-10-18",
                             Id_product = 2,
-                            Modified = "2023-10-13"
-                        },
-                        new
-                        {
-                            Id_Order = 3,
-                            Created = "2023-10-14",
-                            Id_product = 3,
-                            Modified = "2023-10-14"
+                            Modified = "2023-10-18"
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Order_Details", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Order_Details", b =>
                 {
                     b.Property<int>("Id_details")
                         .ValueGeneratedOnAdd()
@@ -398,10 +209,10 @@ namespace Ecommerce1.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id_Order")
+                    b.Property<int>("Id_AppUser")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_User")
+                    b.Property<int>("Id_Order")
                         .HasColumnType("int");
 
                     b.Property<string>("Modified")
@@ -410,9 +221,9 @@ namespace Ecommerce1.Data.Migrations
 
                     b.HasKey("Id_details");
 
-                    b.HasIndex("Id_Order");
+                    b.HasIndex("Id_AppUser");
 
-                    b.HasIndex("Id_User");
+                    b.HasIndex("Id_Order");
 
                     b.ToTable("OrderDetails");
 
@@ -420,30 +231,22 @@ namespace Ecommerce1.Data.Migrations
                         new
                         {
                             Id_details = 1,
-                            Created = "2023-10-12",
+                            Created = "2023-10-19",
+                            Id_AppUser = 1,
                             Id_Order = 1,
-                            Id_User = 1,
-                            Modified = "2023-10-12"
+                            Modified = "2023-10-19"
                         },
                         new
                         {
                             Id_details = 2,
-                            Created = "2023-10-13",
-                            Id_Order = 2,
-                            Id_User = 2,
-                            Modified = "2023-10-13"
-                        },
-                        new
-                        {
-                            Id_details = 3,
-                            Created = "2023-10-14",
-                            Id_Order = 3,
-                            Id_User = 3,
-                            Modified = "2023-10-14"
+                            Created = "2023-10-19",
+                            Id_AppUser = 2,
+                            Id_Order = 1,
+                            Modified = "2023-10-19"
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Payment", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Payment", b =>
                 {
                     b.Property<int>("Id_payments")
                         .ValueGeneratedOnAdd()
@@ -484,35 +287,35 @@ namespace Ecommerce1.Data.Migrations
                         {
                             Id_payments = 1,
                             Amount = 5.00m,
-                            Created = "2023-10-12",
+                            Created = "2023-10-20",
                             Id_Order = 1,
-                            Modified = "2023-10-12",
-                            Provider = "PayPal",
+                            Modified = "2023-10-20",
+                            Provider = "Paypal",
                             Status = "Completed"
                         },
                         new
                         {
                             Id_payments = 2,
                             Amount = 8.50m,
-                            Created = "2023-10-13",
+                            Created = "2023-10-21",
                             Id_Order = 2,
-                            Modified = "2023-10-13",
+                            Modified = "2023-10-21",
                             Provider = "Credit Card",
                             Status = "Pending"
                         },
                         new
                         {
                             Id_payments = 3,
-                            Amount = 3.99m,
-                            Created = "2023-10-14",
-                            Id_Order = 3,
-                            Modified = "2023-10-14",
+                            Amount = 8.50m,
+                            Created = "2023-10-23",
+                            Id_Order = 2,
+                            Modified = "2023-10-24",
                             Provider = "Bank Transfer",
                             Status = "Completed"
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Product", b =>
                 {
                     b.Property<int>("Id_product")
                         .ValueGeneratedOnAdd()
@@ -653,7 +456,7 @@ namespace Ecommerce1.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Shopping_Session", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Shopping_Session", b =>
                 {
                     b.Property<int>("Id_Shop_Session")
                         .ValueGeneratedOnAdd()
@@ -665,7 +468,7 @@ namespace Ecommerce1.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Id_user")
+                    b.Property<int>("Id_AppUser")
                         .HasColumnType("int");
 
                     b.Property<string>("Modified")
@@ -677,7 +480,7 @@ namespace Ecommerce1.Data.Migrations
 
                     b.HasKey("Id_Shop_Session");
 
-                    b.HasIndex("Id_user");
+                    b.HasIndex("Id_AppUser");
 
                     b.ToTable("ShoppingSessions");
 
@@ -686,7 +489,7 @@ namespace Ecommerce1.Data.Migrations
                         {
                             Id_Shop_Session = 1,
                             Created = "2023-10-12",
-                            Id_user = 1,
+                            Id_AppUser = 1,
                             Modified = "2023-10-12",
                             Total_price = 5.00m
                         },
@@ -694,7 +497,7 @@ namespace Ecommerce1.Data.Migrations
                         {
                             Id_Shop_Session = 2,
                             Created = "2023-10-13",
-                            Id_user = 2,
+                            Id_AppUser = 2,
                             Modified = "2023-10-13",
                             Total_price = 8.50m
                         },
@@ -702,31 +505,29 @@ namespace Ecommerce1.Data.Migrations
                         {
                             Id_Shop_Session = 3,
                             Created = "2023-10-14",
-                            Id_user = 3,
+                            Id_AppUser = 3,
                             Modified = "2023-10-14",
-                            Total_price = 3.99m
+                            Total_price = 3.75m
                         });
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.User", b =>
+            modelBuilder.Entity("Ecommerce1.Models.AppUsers", b =>
                 {
-                    b.Property<int>("Id_User")
+                    b.Property<int>("Id_Appuser")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_User"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Appuser"));
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Created")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("Created")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -736,109 +537,183 @@ namespace Ecommerce1.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Modified")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone_number")
-                        .IsRequired()
+                    b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id_User");
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
-                    b.ToTable("Users");
+                    b.HasKey("Id_Appuser");
 
-                    b.HasData(
-                        new
-                        {
-                            Id_User = 1,
-                            Address = "1234 Elm St, Springfield",
-                            Created = "2023-10-01 10:30:00",
-                            Email = "john.doe@gmail.com",
-                            FirstName = "John",
-                            LastName = "Doe",
-                            Modified = "2023-10-10 12:45:00",
-                            PasswordHash = "gM}56fjg",
-                            Phone_number = "+1 555-123-4567"
-                        },
-                        new
-                        {
-                            Id_User = 2,
-                            Address = "5678 Oak St, Greenfield",
-                            Created = "2023-10-02 11:20:00",
-                            Email = "jane.smith@protonmail.com",
-                            FirstName = "Jane",
-                            LastName = "Smith",
-                            Modified = "2023-10-11 15:00:00",
-                            PasswordHash = ">3LUmc=RvyGRHW%g/-~z",
-                            Phone_number = "+1 555-987-6543"
-                        },
-                        new
-                        {
-                            Id_User = 3,
-                            Address = "9101 Pine St, Brookfield",
-                            Created = "2023-10-03 14:45:00",
-                            Email = "mark.williams@domain.com",
-                            FirstName = "Mark",
-                            LastName = "Williams",
-                            Modified = "2023-10-12 09:10:00",
-                            PasswordHash = "x*D5-UV/89`&^_q,v-H7",
-                            Phone_number = "+1 555-321-7654"
-                        },
-                        new
-                        {
-                            Id_User = 4,
-                            Address = "2468 Maple St, Hilltown",
-                            Created = "2023-10-04 09:50:00",
-                            Email = "emma.jones@outlook.com",
-                            FirstName = "Emma",
-                            LastName = "Jones",
-                            Modified = "2023-10-11 16:30:00",
-                            PasswordHash = "fCxwnchJs1w|-S}YA>-F",
-                            Phone_number = "+1 555-654-3210"
-                        },
-                        new
-                        {
-                            Id_User = 5,
-                            Address = "1357 Birch St, Riverview",
-                            Created = "2023-10-05 08:30:00",
-                            Email = "robert.brown@yahoo.com",
-                            FirstName = "Robert",
-                            LastName = "Brown",
-                            Modified = "2023-10-12 14:20:00",
-                            PasswordHash = "(y.<vQ3[8w*]KYgMs3ab",
-                            Phone_number = "+1 555-555-7890"
-                        });
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("AppUser", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("Id_User")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.HasOne("Ecommerce1.Models.User", null)
-                        .WithMany("AppUsers")
-                        .HasForeignKey("UserId_User");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Navigation("User");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Cart_item", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.Shopping_Session", "Shopping_Session")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("Ecommerce1.Data.Cart_item", b =>
+                {
+                    b.HasOne("Ecommerce1.Data.Shopping_Session", "Shopping_Session")
                         .WithMany()
                         .HasForeignKey("Id_Shop_Session")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ecommerce1.Models.Product", "Product")
+                    b.HasOne("Ecommerce1.Data.Product", "Product")
                         .WithMany()
                         .HasForeignKey("Id_product")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -849,9 +724,9 @@ namespace Ecommerce1.Data.Migrations
                     b.Navigation("Shopping_Session");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Order", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Order", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.Product", "Product")
+                    b.HasOne("Ecommerce1.Data.Product", "Product")
                         .WithMany("Orders")
                         .HasForeignKey("Id_product")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -860,28 +735,28 @@ namespace Ecommerce1.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Order_Details", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Order_Details", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.Order", "Orders")
+                    b.HasOne("Ecommerce1.Models.AppUsers", "AppUsers")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("Id_AppUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce1.Data.Order", "Orders")
                         .WithMany("Order_Details")
                         .HasForeignKey("Id_Order")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ecommerce1.Models.User", "Users")
-                        .WithMany("Order_Detail")
-                        .HasForeignKey("Id_User")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("AppUsers");
 
                     b.Navigation("Orders");
-
-                    b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Payment", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Payment", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.Order", "Orders")
+                    b.HasOne("Ecommerce1.Data.Order", "Orders")
                         .WithMany("Payment")
                         .HasForeignKey("Id_Order")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -890,50 +765,99 @@ namespace Ecommerce1.Data.Migrations
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Product", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.Discount", "Discount")
+                    b.HasOne("Ecommerce1.Data.Discount", "Discount")
                         .WithMany("Product")
                         .HasForeignKey("Id_discount");
 
                     b.Navigation("Discount");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Shopping_Session", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Shopping_Session", b =>
                 {
-                    b.HasOne("Ecommerce1.Models.User", "Users")
-                        .WithMany("Shopping_Sessions")
-                        .HasForeignKey("Id_user")
+                    b.HasOne("Ecommerce1.Models.AppUsers", "AppUser")
+                        .WithMany("ShoppingSessions")
+                        .HasForeignKey("Id_AppUser")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Users");
+                    b.Navigation("AppUser");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Discount", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.HasOne("Ecommerce1.Models.AppUsers", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.HasOne("Ecommerce1.Models.AppUsers", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<int>", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce1.Models.AppUsers", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.HasOne("Ecommerce1.Models.AppUsers", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Ecommerce1.Data.Discount", b =>
                 {
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Order", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Order", b =>
                 {
                     b.Navigation("Order_Details");
 
                     b.Navigation("Payment");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.Product", b =>
+            modelBuilder.Entity("Ecommerce1.Data.Product", b =>
                 {
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("Ecommerce1.Models.User", b =>
+            modelBuilder.Entity("Ecommerce1.Models.AppUsers", b =>
                 {
-                    b.Navigation("AppUsers");
+                    b.Navigation("OrderDetails");
 
-                    b.Navigation("Order_Detail");
-
-                    b.Navigation("Shopping_Sessions");
+                    b.Navigation("ShoppingSessions");
                 });
 #pragma warning restore 612, 618
         }

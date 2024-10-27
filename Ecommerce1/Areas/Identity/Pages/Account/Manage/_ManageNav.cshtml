@@ -1,4 +1,10 @@
-﻿@inject SignInManager<AppUser> SignInManager
+﻿@using Ecommerce1.Models
+@using Ecommerce1.Areas.Identity.Pages
+
+
+
+
+@inject SignInManager<AppUsers> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce1.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241021192132_addproduckfk")]
-    partial class addproduckfk
+    [Migration("20241026113108_check")]
+    partial class check
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,154 @@ namespace Ecommerce1.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("AppUsers", b =>
+                {
+                    b.Property<int?>("Id_AppUser")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Id_AppUser"));
+
+                    b.Property<int?>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Created")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Id_User")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LockoutEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Modified")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("UserId_User")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id_AppUser");
+
+                    b.HasIndex("Id_User");
+
+                    b.HasIndex("UserId_User");
+
+                    b.ToTable("AppUser");
+
+                    b.HasData(
+                        new
+                        {
+                            Id_AppUser = 1,
+                            Created = "2023-10-01",
+                            Email = "john.doe@gmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "John",
+                            Id = "22c4e778-c604-469a-9f10-3a273b55882b",
+                            Id_User = 1,
+                            LastName = "Doe",
+                            Modified = "2023-10-10",
+                            PasswordHash = "Password1"
+                        },
+                        new
+                        {
+                            Id_AppUser = 2,
+                            Created = "2023-10-02",
+                            Email = "jane.smith@protonmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "Jane",
+                            Id = "7198afbf-f0f0-42cd-8a07-03d88e34fcbc",
+                            Id_User = 2,
+                            LastName = "Smith",
+                            Modified = "2023-10-11",
+                            PasswordHash = "Password2"
+                        },
+                        new
+                        {
+                            Id_AppUser = 3,
+                            Created = "2023-10-03",
+                            Email = "mark.williams@domain.com",
+                            EmailConfirmed = false,
+                            FirstName = "Mark",
+                            Id = "ec49831c-7185-4e57-9b2b-b9ae125e6fe9",
+                            Id_User = 3,
+                            LastName = "Williams",
+                            Modified = "2023-10-12",
+                            PasswordHash = "Password3"
+                        },
+                        new
+                        {
+                            Id_AppUser = 4,
+                            Created = "2023-10-04",
+                            Email = "emma.jones@outlook.com",
+                            EmailConfirmed = false,
+                            FirstName = "Emma",
+                            Id = "c9db7229-bd39-410f-b31c-8e0b7cba08f5",
+                            Id_User = 4,
+                            LastName = "Jones",
+                            Modified = "2023-10-11",
+                            PasswordHash = "Password4"
+                        },
+                        new
+                        {
+                            Id_AppUser = 5,
+                            Created = "2023-10-05",
+                            Email = "robert.brown@yahoo.com",
+                            EmailConfirmed = false,
+                            FirstName = "Robert",
+                            Id = "a100ffb5-2ac7-416d-a8e4-95ab5d121c9d",
+                            Id_User = 5,
+                            LastName = "Brown",
+                            Modified = "2023-10-12",
+                            PasswordHash = "Password5"
+                        });
+                });
 
             modelBuilder.Entity("Ecommerce1.Models.Cart_item", b =>
                 {
@@ -408,7 +556,6 @@ namespace Ecommerce1.Data.Migrations
                             Category = "Vegetables",
                             Created = "2023-10-03 11:30:00",
                             Description = "Fresh Carrots",
-                            Id_discount = 1,
                             Modified = "2023-10-07 09:00:00",
                             Name = "Carrot",
                             Price = 0.50m,
@@ -420,7 +567,6 @@ namespace Ecommerce1.Data.Migrations
                             Category = "Vegetables",
                             Created = "2023-10-04 14:45:00",
                             Description = "Fresh Lemon",
-                            Id_discount = 1,
                             Modified = "2023-10-08 16:20:00",
                             Name = "Lemon",
                             Price = 2.50m,
@@ -539,8 +685,7 @@ namespace Ecommerce1.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_User"));
 
-                    b.Property<string>("Adress")
-                        .IsRequired()
+                    b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Created")
@@ -551,24 +696,23 @@ namespace Ecommerce1.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Modified")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone_number")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("modified")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id_User");
@@ -579,63 +723,76 @@ namespace Ecommerce1.Data.Migrations
                         new
                         {
                             Id_User = 1,
-                            Adress = "1234 Elm St, Springfield",
+                            Address = "1234 Elm St, Springfield",
                             Created = "2023-10-01 10:30:00",
                             Email = "john.doe@gmail.com",
-                            Name = "John",
-                            Password = "gM}56fjg",
-                            Phone_number = "+1 555-123-4567",
-                            Surname = "Doe",
-                            modified = "2023-10-10 12:45:00"
+                            FirstName = "John",
+                            LastName = "Doe",
+                            Modified = "2023-10-10 12:45:00",
+                            PasswordHash = "gM}56fjg",
+                            Phone_number = "+1 555-123-4567"
                         },
                         new
                         {
                             Id_User = 2,
-                            Adress = "5678 Oak St, Greenfield",
+                            Address = "5678 Oak St, Greenfield",
                             Created = "2023-10-02 11:20:00",
                             Email = "jane.smith@protonmail.com",
-                            Name = "Jane",
-                            Password = ">3LUmc=RvyGRHW%g/-~z",
-                            Phone_number = "+1 555-987-6543",
-                            Surname = "Smith",
-                            modified = "2023-10-11 15:00:00"
+                            FirstName = "Jane",
+                            LastName = "Smith",
+                            Modified = "2023-10-11 15:00:00",
+                            PasswordHash = ">3LUmc=RvyGRHW%g/-~z",
+                            Phone_number = "+1 555-987-6543"
                         },
                         new
                         {
                             Id_User = 3,
-                            Adress = "9101 Pine St, Brookfield",
+                            Address = "9101 Pine St, Brookfield",
                             Created = "2023-10-03 14:45:00",
                             Email = "mark.williams@domain.com",
-                            Name = "Mark",
-                            Password = "x*D5-UV/89`&^_q,v-H7",
-                            Phone_number = "+1 555-321-7654",
-                            Surname = "Williams",
-                            modified = "2023-10-12 09:10:00"
+                            FirstName = "Mark",
+                            LastName = "Williams",
+                            Modified = "2023-10-12 09:10:00",
+                            PasswordHash = "x*D5-UV/89`&^_q,v-H7",
+                            Phone_number = "+1 555-321-7654"
                         },
                         new
                         {
                             Id_User = 4,
-                            Adress = "2468 Maple St, Hilltown",
+                            Address = "2468 Maple St, Hilltown",
                             Created = "2023-10-04 09:50:00",
                             Email = "emma.jones@outlook.com",
-                            Name = "Emma",
-                            Password = "fCxwnchJs1w|-S}YA>-F",
-                            Phone_number = "+1 555-654-3210",
-                            Surname = "Jones",
-                            modified = "2023-10-11 16:30:00"
+                            FirstName = "Emma",
+                            LastName = "Jones",
+                            Modified = "2023-10-11 16:30:00",
+                            PasswordHash = "fCxwnchJs1w|-S}YA>-F",
+                            Phone_number = "+1 555-654-3210"
                         },
                         new
                         {
                             Id_User = 5,
-                            Adress = "1357 Birch St, Riverview",
+                            Address = "1357 Birch St, Riverview",
                             Created = "2023-10-05 08:30:00",
                             Email = "robert.brown@yahoo.com",
-                            Name = "Robert",
-                            Password = "(y.<vQ3[8w*]KYgMs3ab",
-                            Phone_number = "+1 555-555-7890",
-                            Surname = "Brown",
-                            modified = "2023-10-12 14:20:00"
+                            FirstName = "Robert",
+                            LastName = "Brown",
+                            Modified = "2023-10-12 14:20:00",
+                            PasswordHash = "(y.<vQ3[8w*]KYgMs3ab",
+                            Phone_number = "+1 555-555-7890"
                         });
+                });
+
+            modelBuilder.Entity("AppUsers", b =>
+                {
+                    b.HasOne("Ecommerce1.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("Id_User");
+
+                    b.HasOne("Ecommerce1.Models.User", null)
+                        .WithMany("AppUsers")
+                        .HasForeignKey("UserId_User");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Ecommerce1.Models.Cart_item", b =>
@@ -737,6 +894,8 @@ namespace Ecommerce1.Data.Migrations
 
             modelBuilder.Entity("Ecommerce1.Models.User", b =>
                 {
+                    b.Navigation("AppUsers");
+
                     b.Navigation("Order_Detail");
 
                     b.Navigation("Shopping_Sessions");

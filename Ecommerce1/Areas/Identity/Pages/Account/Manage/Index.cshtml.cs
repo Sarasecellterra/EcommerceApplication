@@ -3,6 +3,7 @@
 #nullable disable
 
 using System.ComponentModel.DataAnnotations;
+using Ecommerce1.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -11,12 +12,12 @@ namespace Ecommerce1.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
-        private readonly UserManager<AppUser> _userManager;
-        private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUsers> _userManager;
+        private readonly SignInManager<AppUsers> _signInManager;
 
         public IndexModel(
-            UserManager<AppUser> userManager,
-            SignInManager<AppUser> signInManager)
+            UserManager<AppUsers> userManager,
+            SignInManager<AppUsers> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -59,7 +60,7 @@ namespace Ecommerce1.Areas.Identity.Pages.Account.Manage
             public string FirstName { get; internal set; }
         }
 
-        private async Task LoadAsync(AppUser user)
+        private async Task LoadAsync(AppUsers user)
         {
             var userName = await _userManager.GetUserNameAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);

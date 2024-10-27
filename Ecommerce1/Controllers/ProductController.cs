@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using Ecommerce1.Data;
-using Ecommerce1.Models;
 using Microsoft.EntityFrameworkCore; // Make sure to include the Product model
 
 public class ProductController : Controller
